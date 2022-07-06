@@ -8,7 +8,7 @@ class App extends Component {
       {
         id: 1,
         title: 'Takeout trash',
-        completed: true
+        completed: false
       },
       {
         id: 2,
