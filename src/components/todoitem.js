@@ -8,21 +8,24 @@ export class Todoitem extends Component {
       background: '#fefef1',
       borderBottom: '2px #ccc solid',
       padding: '10px',
-      textDecoration: this.props.todo.completed ? 'line-through' : 'none'
+      textDecoration: this.props.todos.completed ? 'line-through' : 'none'
     }
   }
 
+
   render() {
+    const { id, title } = this.props.todos
     return (
       <div style={ this.getStyle() }>
-        <h1>{ this.props.todo.title }</h1>
+        
+        <p> <input type='checkbox' onChange={this.props.markComplete.bind(this, id)}></input> { this.props.todos.title }</p>
       </div>
     )
   }
 }
 
 Todoitem.propTypes = {
-  todo: propTypes.object.isRequired
+  todos: propTypes.object.isRequired
 }
 
 export default Todoitem
